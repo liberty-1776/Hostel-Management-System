@@ -35,7 +35,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-7 align-self-center">
-                       <?php include 'includes/greetings-a.php'?>
+                       <h3>Good Morning, Admin</h3>
                         <div class="d-flex align-items-center">
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium"><?php include 'counters/student-count.php'?></h2>
+                                        <h2 class="text-dark mb-1 font-weight-medium">5</h2>
                                 
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Registered Students</h6>
@@ -64,7 +64,7 @@
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
-                                    <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><?php include 'counters/room-count.php'?></h2>
+                                    <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium">20</h2>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Total Rooms
                                     </h6>
                                 </div>
@@ -79,7 +79,7 @@
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium"><?php include 'counters/booked-count.php'?></h2>
+                                        <h2 class="text-dark mb-1 font-weight-medium">10</h2>
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Booked Rooms</h6>
                                 </div>
@@ -93,7 +93,7 @@
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
-                                    <h2 class="text-dark mb-1 font-weight-medium"><?php include 'counters/course-count.php'?></h2>
+                                    <h2 class="text-dark mb-1 font-weight-medium">2</h2>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Featured Courses</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
@@ -113,31 +113,15 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <!-- <th scope="col">User ID</th> -->
                                             <th scope="col">Student's Email</th>
                                             <th scope="col">Last Activity</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php	
-                                        $aid=$_SESSION['id'];
-                                        $ret="SELECT * from userlog ORDER BY loginTime DESC";
-                                        $stmt= $mysqli->prepare($ret) ;
-                                        $stmt->execute() ;
-                                        $res=$stmt->get_result();
-                                        $cnt=1;
-                                        while($row=$res->fetch_object()) {
-                                                ?>
-                                        <tr><td><?php echo $cnt;;?></td>
-                                        <!-- <td><?php echo $row->userId;?></td> -->
-                                        <td><?php echo $row->userEmail;?></td>
-                                        <td><?php echo $row->loginTime;?></td>
-                                            </tr>
-                                            <?php
-                                        $cnt=$cnt+1;
-                                            } ?>
-											
-										
+                                        <tr><td>1</td>
+                                        <td>dummy@gmail.com</td>
+                                        <td>1/2/2023 4:55</td>
+                                            </tr>		
 									</tbody>
                                 </table>
                             </div>
