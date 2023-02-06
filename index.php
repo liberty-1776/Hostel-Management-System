@@ -1,4 +1,3 @@
-
 <!-- By CodeAstro - codeastro.com -->
 <!DOCTYPE html>
 <html dir="ltr">
@@ -14,13 +13,13 @@
     <link href="dist/css/style.min.css" rel="stylesheet">
 
     <script type="text/javascript">
-    function valid() {
-    if(document.registration.password.value!= document.registration.cpassword.value){
-        alert("Password and Re-Type Password Field do not match  !!");
-    document.registration.cpassword.focus();
-    return false;
-        }
-    return true;
+        function valid() {
+            if (document.registration.password.value != document.registration.cpassword.value) {
+                alert("Password and Re-Type Password Field do not match  !!");
+                document.registration.cpassword.focus();
+                return false;
+            }
+            return true;
         }
     </script>
 
@@ -30,7 +29,7 @@
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
             style="background:url(../assets/images/big/auth-bg.jpg) no-repeat center center;">
             <div class="auth-box row">
-                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(assets/images/hostel-img.jpg);">
+                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(assets/images/hostel-img.jpeg);">
                 </div>
                 <div class="col-lg-5 col-md-7 bg-white">
                     <div class="p-3">
@@ -38,28 +37,26 @@
                             <img src="assets/images/big/icon.png" alt="wrapkit">
                         </div>
                         <h2 class="mt-3 text-center">Student Login</h2>
-                        
+
                         <form class="mt-4" method="POST">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark" for="uname">Email</label>
-                                        <input class="form-control" name="email" id="uname" type="email"
-                                            placeholder="Enter your email" required>
+                                        <input class="form-control" name="email" id="uname" type="email" placeholder="Enter your email" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark" for="pwd">Password</label>
-                                        <input class="form-control" name="password" id="pwd" type="password"
-                                            placeholder="Enter your password" required>
+                                        <input class="form-control" name="password" id="pwd" type="password" placeholder="Enter your password" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">
                                     <button type="submit" name="login" class="btn btn-block btn-dark">LOGIN</button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-5">
-                                   <a href="admin/index.php" class="text-danger">Go to Admin Panel</a>
+                                    <a href="admin/index.php" class="text-danger">Go to Admin Panel</a>
                                 </div>
                             </div>
                         </form>
