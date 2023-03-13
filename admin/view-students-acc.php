@@ -75,21 +75,31 @@
         
                                         <tr>
                                         <td>1</td>
-                                        <td>CA015</td>
-                                        <td>Dummy1</td>
+                                        <td>2001089</td>
+                                        <td>Hritik K Goyal</td>
                                         <td>Male</td>
                                         <td>XXXXXXXXX</td>
-                                        <td>dummy1@gmail.com</td>
+                                        <td>hritik@gmail.com</td>
                                         <td><i class="icon-close" style="color:red;"></i></a></td>
                                         </tr>
 
                                         <tr>
                                         <td>2</td>
-                                        <td>CA016</td>
-                                        <td>Dummy2</td>
+                                        <td>2001058</td>
+                                        <td>cyrus@gmail.com</td>
                                         <td>Male</td>
                                         <td>XXXXXXXXX</td>
-                                        <td>dummy2@gmail.com</td>
+                                        <td>cyrus@gmail.com</td>
+                                        <td><i class="icon-close" style="color:red;"></i></a></td>
+                                        </tr>
+
+                                        <tr>
+                                        <td>3</td>
+                                        <td>2001006</td>
+                                        <td>Aayush D Barmecha</td>
+                                        <td>Male</td>
+                                        <td>XXXXXXXXX</td>
+                                        <td>aayush@gmail.com</td>
                                         <td><i class="icon-close" style="color:red;"></i></a></td>
                                         </tr>
 											
