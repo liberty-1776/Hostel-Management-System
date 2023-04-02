@@ -14,6 +14,7 @@ The admin panel has multiple features such as registering a student for first ti
 The student is also given the ability to book the hostel whereas it would be finally controlled by admin. If he/she finds any discrepancies, it can be further resolved by him in the Student Details page. The student can also add his/her grievances faced while living in hostel.
 
 <b>Notes:</b>
+
 The project is built in PHP using MySQL. 
 You need to build your own database(😉).
 This project was built as a course work for Software Engineering.
