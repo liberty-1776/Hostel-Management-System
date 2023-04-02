@@ -28,7 +28,17 @@
 </head>
 
 <body>
-
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
+            </div>
+        </div> -->
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
         <!-- ============================================================== -->
@@ -90,7 +100,7 @@
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">3</h2>
+                                        <h2 class="text-dark mb-1 font-weight-medium"><?php include 'counters/student-count.php'?></h2>
                                 
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Registered Students</h6>
@@ -106,7 +116,7 @@
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
-                                    <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium">9</h2>
+                                    <h2 class="text-dark mb-1 w-100 text-truncate font-weight-medium"><?php include 'counters/room-count.php'?></h2>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Total Rooms
                                     </h6>
                                 </div>
@@ -121,7 +131,7 @@
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
                                     <div class="d-inline-flex align-items-center">
-                                        <h2 class="text-dark mb-1 font-weight-medium">7</h2>
+                                        <h2 class="text-dark mb-1 font-weight-medium"><?php include 'counters/booked-count.php'?></h2>
                                     </div>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Booked Rooms</h6>
                                 </div>
@@ -135,7 +145,7 @@
                         <div class="card-body">
                             <div class="d-flex d-lg-flex d-md-block align-items-center">
                                 <div>
-                                    <h2 class="text-dark mb-1 font-weight-medium">9</h2>
+                                    <h2 class="text-dark mb-1 font-weight-medium"><?php include 'counters/course-count.php'?></h2>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Featured Courses</h6>
                                 </div>
                                 <div class="ml-auto mt-md-3 mt-lg-0">
@@ -144,9 +154,32 @@
                             </div>
                         </div>
                     </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex d-lg-flex d-md-block align-items-center">
+                                <div>
+                                    <h2 class="text-dark mb-1 font-weight-medium"><?php include 'counters/grievance-count.php'?></h2>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">Grievances</h6>
+                                </div>
+                                <div class="ml-auto mt-md-3 mt-lg-0">
+                                    <span class="opacity-7 text-muted"><i data-feather="file-text"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- *************************************************************** -->
+                <!-- End First Cards -->
+                <!-- *************************************************************** -->
+                
                
             </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
             <?php include '../includes/footer.php' ?>
             <!-- ============================================================== -->
             <!-- End footer -->

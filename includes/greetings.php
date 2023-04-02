@@ -13,8 +13,8 @@
     else if($numeric_date>=18&&$numeric_date<=23) 
     $welcome_string="Good Evening,"; 
 
-        $aid=$_SESSION['id'];
-        $ret="select * from userregistration where id=?";
+        $aid=$_SESSION['regNo'];
+        $ret="select * from userregistration where regNo=?";
          $stmt= $mysqli->prepare($ret) ;
          $stmt->bind_param('i',$aid);
          $stmt->execute();

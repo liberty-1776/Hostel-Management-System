@@ -1,3 +1,3 @@
 <footer class="footer text-center text-muted">
-&copy; Hostel Management System - Developed by Aayush Cyrus Hritik
+&copy; <?php echo date("Y"); ?> - Hostel Management System - Developed by Hritik Aayush Cyrus</a>
 </footer>

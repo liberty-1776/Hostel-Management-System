@@ -5,7 +5,7 @@
     check_login();
     if(isset($_POST['submit'])){
         $roomno=$_POST['room'];
-        $seater=$_POST['seater'];
+        // $seater=$_POST['seater'];
         $feespm=$_POST['fpm'];
         $foodstatus=$_POST['foodstatus'];
         $stayfrom=$_POST['stayf'];
@@ -28,9 +28,9 @@
         $paddress=$_POST['paddress'];
         $pcity=$_POST['pcity'];
         $ppincode=$_POST['ppincode'];
-        $query="INSERT into  registration(roomno,seater,feespm,foodstatus,stayfrom,duration,course,regno,firstName,middleName,lastName,gender,contactno,emailid,egycontactno,guardianName,guardianRelation,guardianContactno,corresAddress,corresCIty,corresPincode,pmntAddress,pmntCity,pmntPincode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $query="INSERT into  registration(roomno,feespm,foodstatus,stayfrom,duration,course,regno,firstName,middleName,lastName,gender,contactno,emailid,egycontactno,guardianName,guardianRelation,guardianContactno,corresAddress,corresCIty,corresPincode,pmntAddress,pmntCity,pmntPincode) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $stmt = $mysqli->prepare($query);
-        $rc=$stmt->bind_param('iiiisissssssisissississi',$roomno,$seater,$feespm,$foodstatus,$stayfrom,$duration,$course,$regno,$fname,$mname,$lname,$gender,$contactno,$emailid,$emcntno,$gurname,$gurrelation,$gurcntno,$caddress,$ccity,$cpincode,$paddress,$pcity,$ppincode);
+        $rc=$stmt->bind_param('iiisissssssisissississi',$roomno,$feespm,$foodstatus,$stayfrom,$duration,$course,$regno,$fname,$mname,$lname,$gender,$contactno,$emailid,$emcntno,$gurname,$gurrelation,$gurcntno,$caddress,$ccity,$cpincode,$paddress,$pcity,$ppincode);
         $stmt->execute();
         echo"<script>alert('Requested Student Has Been Registered!');</script>";
     }
@@ -56,76 +56,57 @@
     <link href="../dist/css/style.min.css" rel="stylesheet">
 
     <script>
-    function getSeater(val) {
-        $.ajax({
-        type: "POST",
-        url: "get-seater.php",
-        data:'roomid='+val,
-        success: function(data){
-        //alert(data);
-        $('#seater').val(data);
-        }
-        });
+    // function getSeater(val) {
+    //     $.ajax({
+    //     type: "POST",
+    //     url: "get-seater.php",
+    //     data:'roomid='+val,
+    //     success: function(data){
+    //     //alert(data);
+    //     $('#seater').val(data);
+    //     }
+    //     });
 
-        $.ajax({
-        type: "POST",
-        url: "get-seater.php",
-        data:'rid='+val,
-        success: function(data){
-        //alert(data);
-        $('#fpm').val(data);
-        }
-        });
-    }
+    //     $.ajax({
+    //     type: "POST",
+    //     url: "get-seater.php",
+    //     data:'rid='+val,
+    //     success: function(data){
+    //     //alert(data);
+    //     $('#fpm').val(data);
+    //     }
+    //     });
+    //}
     </script>
-    <!-- By CodeAstro - codeastro.com -->
 </head>
 
 <body>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
+   
     <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
+    
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
+
         <header class="topbar" data-navbarbg="skin6">
             <?php include '../includes/student-navigation.php'?>
         </header>
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
+     
         <aside class="left-sidebar" data-sidebarbg="skin6">
-            <!-- Sidebar scroll-->
+     
             <div class="scroll-sidebar" data-sidebarbg="skin6">
                 <?php include '../includes/student-sidebar.php'?>
             </div>
-            <!-- End Sidebar scroll-->
+     
         </aside>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+
         <div class="page-wrapper">
             
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
+    
             <div class="container-fluid">
                 
                 <form method="POST">
@@ -167,7 +148,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Room Number</h4>
                                     <div class="form-group mb-4">
-                                        <select class="custom-select mr-sm-2" name="room" id="room" onChange="getSeater(this.value);" onBlur="checkAvailability()" required id="inlineFormCustomSelect">
+                                        <select class="custom-select mr-sm-2" name="room" id="room"  onBlur="checkAvailability()" required id="inlineFormCustomSelect">
                                             <option selected>Select...</option>
                                             <?php $query ="SELECT * FROM rooms";
                                             $stmt2 = $mysqli->prepare($query);
@@ -185,8 +166,7 @@
                             </div>
                         </div>
                     </div>
-<!-- By CodeAstro - codeastro.com -->
-                
+
  
                     <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="card">
@@ -196,19 +176,6 @@
                                         <input type="date" name="stayf" id="stayf" class="form-control" required>
                                     </div>
                                 
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Seater</h4>
-                                    <div class="form-group">
-                                        <input type="text" id="seater" name="seater" placeholder="Enter Seater No." required class="form-control">
-                                    </div>
                             </div>
                         </div>
                     </div>
@@ -266,7 +233,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Total Fees Per Month</h4>
                                     <div class="form-group">
-                                        <input type="text" name="fpm" id="fpm" placeholder="Your total fees" class="form-control">
+                                        <input type="text" name="fpm" id="fpm" placeholder="3000"  value="3000" class="form-control" readonly>
                                     </div>
                             </div>
                         </div>
@@ -292,8 +259,8 @@
                 <div class="row">
 
                 <?php	
-                $aid=$_SESSION['id'];
-                    $ret="select * from userregistration where id=?";
+                $aid=$_SESSION['regNo'];
+                    $ret="select * from userregistration where regNo=?";
                         $stmt= $mysqli->prepare($ret) ;
                     $stmt->bind_param('i',$aid);
                     $stmt->execute();
@@ -588,40 +555,21 @@
                 </form>
 
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
+
             <?php include '../includes/footer.php' ?>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
+
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
+
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- apps -->
-    <!-- apps -->
     <script src="../dist/js/app-style-switcher.js"></script>
     <script src="../dist/js/feather.min.js"></script>
     <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
     <script src="../dist/js/sidebarmenu.js"></script>
-    <!--Custom JavaScript -->
     <script src="../dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
     <script src="../assets/extra-libs/c3/d3.min.js"></script>
     <script src="../assets/extra-libs/c3/c3.min.js"></script>
     <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
@@ -631,7 +579,6 @@
 
 </body>
 
-<!-- Custom Ft. Script Lines -->
 <script type="text/javascript">
 	$(document).ready(function(){
         $('input[type="checkbox"]').click(function(){

@@ -1,6 +1,6 @@
 <?php 
  
-    date_default_timezone_set('America/Chicago');
+    date_default_timezone_set('asia/kolkata');
     //Here we define out main variables 
     $welcome_string="Welcome"; 
     $numeric_date=date("G"); 

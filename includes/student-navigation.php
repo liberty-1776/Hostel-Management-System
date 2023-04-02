@@ -8,7 +8,7 @@
                     <!-- ============================================================== -->
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="index.html">
+                        <a href="dashboard.php">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
                                 <img src="../assets/images/logo-icon-nav.png" alt="homepage" class="dark-logo" />
@@ -65,8 +65,8 @@
                                     width="40">
                                 
                                     <?php	
-                                    $aid=$_SESSION['id'];
-                                        $ret="select * from userregistration where id=?";
+                                    $aid=$_SESSION['regNo'];
+                                        $ret="select * from userregistration where regNo=?";
                                         $stmt= $mysqli->prepare($ret) ;
                                         $stmt->bind_param('i',$aid);
                                         $stmt->execute();

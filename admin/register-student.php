@@ -1,3 +1,25 @@
+<?php
+    session_start();
+    include('../includes/dbconn.php');
+    if(isset($_POST['submit']))
+    {
+    $regNo=$_POST['regNo'];
+    $fname=$_POST['fname'];
+    $mname=$_POST['mname'];
+    $lname=$_POST['lname'];
+    $gender=$_POST['gender'];
+    $contactno=$_POST['contact'];
+    $emailid=$_POST['email'];
+    $password=$_POST['password'];
+    $password = md5($password);
+    $query="INSERT into userRegistration(regNo,firstName,middleName,lastName,gender,contactNo,email,password) values(?,?,?,?,?,?,?,?)";
+    $stmt = $mysqli->prepare($query);
+    $rc=$stmt->bind_param('issssiss',$regNo,$fname,$mname,$lname,$gender,$contactno,$emailid,$password);
+    $stmt->execute();
+        echo"<script>alert('Student has been Registered!');</script>";
+    }
+?>
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -17,10 +39,33 @@
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
 
+    <script type="text/javascript">
+    function valid(){
+        if(document.registration.password.value!= document.registration.cpassword.value)
+    {
+        alert("Password and Confirm Password does not match");
+        document.registration.cpassword.focus();
+        return false;
+    }
+        return true;
+    }
+    </script>
     
 </head>
 
 <body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
         <!-- ============================================================== -->
@@ -228,11 +273,16 @@
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
-
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
     <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <!-- apps -->
+    <!-- apps -->
     <script src="../dist/js/app-style-switcher.js"></script>
     <script src="../dist/js/feather.min.js"></script>
     <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
@@ -246,6 +296,27 @@
     <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="../dist/js/pages/dashboards/dashboard1.min.js"></script>
 
+    <!-- customs -->
+    <script>
+    function checkAvailability() {
+
+        $("#loaderIcon").show();
+        jQuery.ajax({
+        url: "check-availability.php",
+        data:'emailid='+$("#email").val(),
+        type: "POST",
+        success:function(data){
+            $("#user-availability-status").html(data);
+            $("#loaderIcon").hide();
+            },
+                error:function ()
+            {
+                event.preventDefault();
+                alert('error');
+            }
+        });
+    }
+    </script>
 </body>
 
 </html>

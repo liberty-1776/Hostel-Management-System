@@ -24,7 +24,7 @@
         class="hide-menu">Log Activities</span></a></li>
 
         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="add_grievance.php"
-        aria-expanded="false"><i class="fas fa-cogs"></i><span
+        aria-expanded="false"><i class="fas fa-address-card" aria-hidden="true"></i><span
         class="hide-menu">Add Grievance</span></a></li>
                            
     </ul>
