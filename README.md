@@ -61,7 +61,7 @@ This project was built as a course work for Software Engineering.
 
 To use the project, first register yourself using the admin details.
 
-##WorkFlow
+<h3>WorkFLow</h3>
 
 <b>1. Design</b>
 
