@@ -60,3 +60,8 @@ This project was built as a course work for Software Engineering.
 <b>Have A Look :</b> https://hms1710.000webhostapp.com/
 
 To use the project, first register yourself using the admin details.
+
+##WorkFlow
+
+<b>1. Design</b>
+
